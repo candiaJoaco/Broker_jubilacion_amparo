@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f9f9f9;
+    color: #299fd7;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 50px;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Contenedor del logo + texto */
+.logo-box {
+    display: flex;
+    align-items: center;              
+    gap: 8px;
+}
+
+/* Tamaño correcto del logo */
+.logo-box img {
+    height: 64px; /* tamaño ideal para PNG */
+    width: auto;
+}
+
+/* Texto del logo */
+.logo-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #299fd7; /* ahora sí se ve */
+}
+
+/* Menú */
+.navbar nav a {
+    margin-left: 45px;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #299fd7;  /* mejor contraste */
+    transition: 0.2s;
+}
+
+.navbar nav a:hover {
+    color: #007bb8;
+}
+
+/* Botón ingresar */
+.btn-ingresar {
+    background: #299fd7;
+    color: white !important;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.btn-ingresar:hover {
+    background: #007bb8;
+}
+
+
+/* ===== HERO ===== */
+.hero {
+    
+    background-image: url('../img/imagen1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 60px 400px;
+    gap: 40px;
+    min-height: 400px;
+    border-radius: 12px;
+    font-size: 2rem;
+    justify-content: center;
+
+}
+
+
+.hero-text h1,
+.hero-text p {
+    text-align: center;
+    color: white;
+    padding: 30px 0px 10px 0px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6); /* mejor lectura */
+}
+
+/* Botón */
+.btn-empezar {
+    display: block;
+    margin: 25px auto 0;
+    width: fit-content;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    color: rgb(41 159 215);
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid rgb(41 159 215);
+    transition: 0.2s;
+}
+
+.btn-empezar:hover {
+    background: rgba(255, 255, 255, 0.30);
+}
+
+/* ===== INTRO ===== */
+.intro {
+    text-align: center;
+    padding: 60px 40px;
+}
+
+.intro h2 {
+    font-size: 3em;
+}
+
+.intro p {
+    font-size: 1.5em;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* ===== BENEFICIOS ===== */
+.beneficios {
+    font-size: 2rem;
+    background: white;
+    padding: 60px 40px;
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.beneficio-card {
+    background: #f6f7ff;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* ===== FUNCIONES ===== */
+.funciones {
+    font-size: 2rem;
+    padding: 60px 40px;
+}
+
+.funciones-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.funcion-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.09);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #fff;
+    margin-top: 40px;
+}

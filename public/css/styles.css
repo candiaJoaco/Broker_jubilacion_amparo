@@ -1,0 +1,978 @@
+/* ===== ESTILOS GENERALES ===== */
+body {
+    margin: 0;
+    background: #f4f6fb;
+    font-family: "Segoe UI", sans-serif;
+    color: #333;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: #fff;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: bold;
+    color: #4a6cf7;
+}
+
+.navbar a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #555;
+}
+
+.container {
+    padding: 30px;
+}
+
+/* ===== TARJETAS PRINCIPALES ===== */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+
+.welcome-card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 18px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+
+/* ===== GRID ===== */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+/* ===== PANEL FINANCIERO ===== */
+.fin-resumen {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.valor {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #4a6cf7;
+}
+
+.chart-box {
+    height: 140px;
+    background: #eaf0ff;
+    border-radius: 10px;
+    margin: 12px 0;
+}
+
+.advice-box {
+    background: #f5f6ff;
+    padding: 10px;
+    border-left: 4px solid #4a6cf7;
+}
+
+/* ===== PANEL EMOCIONAL ===== */
+.moods button {
+    font-size: 28px;
+    border: none;
+    background: none;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.motivacion {
+    margin-top: 15px;
+    font-style: italic;
+    color: #4a6cf7;
+}
+
+/* ===== ACTIVIDAD RECIENTE ===== */
+.activity-list li {
+    margin: 8px 0;
+    list-style: none;
+}
+
+/* ===== CHAT ===== */
+.panel-chat {
+    grid-column: span 2;
+}
+
+.chat-area {
+    background: #eef1ff;
+    height: 250px;
+    padding: 12px;
+    border-radius: 12px;
+    overflow-y: auto;
+}
+
+.chat-msg {
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.chat-msg.ai {
+    background: #dfe6ff;
+}
+
+.chat-msg.user {
+    background: #fff;
+    margin-left: auto;
+}
+
+/* Input */
+.chat-input {
+    display: flex;
+    margin-top: 12px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #bbb;
+}
+
+.chat-input button {
+    margin-left: 10px;
+    background: #4a6cf7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* ===== FOOTER NAV ===== */
+.footer-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 70px;
+    background: #ffffff;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border-radius: 12px 12px 0 0;
+    z-index: 2000;
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #299fd7;
+    font-size: 0.9rem;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.footer-item:hover {
+    color: #007bb8;
+}
+
+/* Iconos */
+.footer-item .icon {
+    font-size: 1.6rem;
+}
+
+/* Mensaje central resaltado */
+.footer-item.central {
+    transform: translateY(-10px);
+    background: #299fd7;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    font-weight: bold;
+}
+
+.footer-item.central .icon {
+    font-size: 1.8rem;
+}
+
+.footer-item.active {
+    color: #0d82ff;
+    font-weight: 700;
+}
+
+.footer-item.active .icon {
+    transform: scale(1.15);
+}
+
+
+/* ===== CHAT ===== */
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 160px); /* espacio para navbar y footer */
+    padding: 10px 15px;
+}
+
+/* Área de mensajes */
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    scroll-behavior: smooth;
+}
+
+/* Mensaje IA */
+.msg.ia {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.msg.ia .bubble {
+    background: #e8f5ff;
+    color: #0b4f6c;
+}
+
+/* Mensaje Usuario */
+.msg.user {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.msg.user .bubble {
+    background: #299fd7;
+    color: white;
+}
+
+.bubble {
+    max-width: 70%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 1rem;
+    line-height: 1.4;
+    animation: fadeIn 0.2s ease;
+}
+
+/* Input del chat */
+.chat-input-area {
+    display: flex;
+    padding: 12px;
+    background: white;
+    border-top: 1px solid #ddd;
+    position: sticky;
+    bottom: 80px; /* justo encima del footer */
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.chat-input-area button {
+    margin-left: 10px;
+    padding: 10px 18px;
+    background: #299fd7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.chat-input-area button:hover {
+    background: #007bb8;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== BIENESTAR ===== */
+
+.bienestar-container {
+    padding: 20px;
+    margin-bottom: 110px; /* espacio por el footer */
+}
+
+.bienestar-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #299fd7;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.bienestar-sub {
+    text-align: center;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Grid de tarjetas */
+.bienestar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+/* Tarjetas */
+.bienestar-card {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    text-align: center;
+    transition: 0.2s;
+}
+
+.bienestar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.bienestar-card .icon {
+    font-size: 2.1rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.bienestar-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    color: #0b4f6c;
+}
+
+.bienestar-card p {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 14px;
+}
+
+.btn-bienestar {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #299fd7;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.btn-bienestar:hover {
+    background: #007bb8;
+}
+
+/* ===== FINANZAS ===== */
+
+.finanzas-container {
+    padding: 20px;
+    margin-bottom: 110px; /* espacio para footer */
+}
+
+.finanzas-title {
+    font-size: 1.8rem;
+    color: #299fd7;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.finanzas-sub {
+    text-align: center;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* GRID TARJETAS */
+.finanzas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.fin-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    text-align: center;
+    transition: 0.2s;
+}
+
+.fin-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Colores por categoría */
+.fin-card.ingreso {
+    border-left: 6px solid #2ecc71;
+}
+
+.fin-card.gasto {
+    border-left: 6px solid #e74c3c;
+}
+
+.fin-card.balance {
+    border-left: 6px solid #3498db;
+}
+
+.fin-card h3 {
+    margin: 0;
+    color: #0b4f6c;
+}
+
+.fin-card .monto {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.fin-icon {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Simulación estilo Apple */
+.monto {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #0b4f6c;
+}
+
+/* ===== SIMULADOR ===== */
+.fin-simulador {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.fin-simulador label {
+    font-weight: 600;
+    display: block;
+    margin-top: 10px;
+}
+
+.fin-simulador input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.fin-simulador button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background: #299fd7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.fin-simulador button:hover {
+    background: #007bb8;
+}
+
+/* ===== GRAFICO MÁS PEQUEÑO ===== */
+
+.grafico-container {
+    width: 70%;
+    max-width: 280px; /* tamaño máximo */
+    margin: 0 auto;
+}
+
+
+/* GRAFICO */
+.fin-grafico h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #0b4f6c;
+}
+
+.grafico-placeholder {
+    height: 160px;
+    background: #f1f7ff;
+    border: 2px dashed #a3c8e5;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #299fd7;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* MOVIMIENTOS RECIENTES */
+.fin-recientes h2 {
+    color: #0b4f6c;
+    margin-bottom: 12px;
+}
+
+.mov-item {
+    background: white;
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mov-info small {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.mov-monto {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.mov-monto.negativo {
+    color: #e74c3c;
+}
+
+.mov-monto.positorio,
+.mov-monto.positivo { /* por si lo escribes diferente */
+    color: #2ecc71;
+}
+
+/* ===== AJUSTES ===== */
+
+.ajustes-container {
+    padding: 20px;
+    margin-bottom: 110px; /* espacio para footer */
+}
+
+.ajustes-title {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #299fd7;
+    margin-bottom: 25px;
+}
+
+/* Tarjetas */
+.ajustes-card {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    margin-bottom: 22px;
+}
+
+.ajustes-card h3 {
+    margin: 0 0 12px 0;
+    color: #0b4f6c;
+}
+
+/* Elementos dentro de los ajustes */
+.ajustes-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.ajustes-item:last-child {
+    border-bottom: none;
+}
+
+.ajustes-item span {
+    font-size: 1rem;
+}
+
+.link-ajustes {
+    color: #299fd7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link-ajustes:hover {
+    color: #007bb8;
+}
+
+/* Perfil superior */
+.perfil-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.perfil-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.perfil-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #dceeff;
+}
+
+.btn-ajustes {
+    padding: 8px 14px;
+    background: #299fd7;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.btn-ajustes:hover {
+    background: #007bb8;
+}
+
+/* Cerrar sesión */
+.cerrar-sesion {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.cerrar-btn {
+    color: #e74c3c;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.cerrar-btn:hover {
+    color: #c0392b;
+}
+
+.bienestar-container {
+    padding: 20px;
+}
+
+.bienestar-title {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.emociones-box {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 15px;
+}
+
+.emocion-btn {
+    background: white;
+    border: none;
+    font-size: 2.4rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.emocion-btn:hover {
+    transform: scale(1.2);
+}
+
+.mensaje-emocion {
+    text-align: center;
+    font-size: 1.1rem;
+    min-height: 20px;
+    margin-bottom: 10px;
+}
+
+.comentario-box {
+    width: 100%;
+    height: 90px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.acciones-box {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.accion-btn {
+    background: #299fd7;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.historial-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.historial-box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.historial-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.historial-item:last-child {
+    border-bottom: none;
+}
+
+.historial-empty {
+    text-align: center;
+    color: #777;
+}
+
+.guardar-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.guardar-btn {
+    background: #34a853;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.guardar-btn:hover {
+    background: #2d8c45;
+}
+
+/* resaltar emoción seleccionada */
+.emocion-btn.selected {
+    box-shadow: 0 6px 18px rgba(41,159,215,0.18);
+    transform: scale(1.18);
+    border-radius: 10px;
+}
+
+/* formato fecha en historial */
+.hist-fecha {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 6px;
+}
+
+.dashboard-container {
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* GRAFICO */
+.finanzas-dashboard-box {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* EMOCIONES */
+.dash-emociones-box {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 10px 0 15px;
+}
+
+.dash-emocion-btn {
+    background: white;
+    border: none;
+    font-size: 2.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.dash-emocion-btn.selected {
+    transform: scale(1.2);
+    border-radius: 10px;
+    box-shadow: 0 5px 16px rgba(41,159,215,0.20);
+}
+
+.dash-mensaje {
+    text-align: center;
+    min-height: 20px;
+    margin-bottom: 10px;
+}
+
+.dash-comentario {
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 1rem;
+    resize: none;
+    margin-bottom: 15px;
+}
+
+.dash-guardar-box {
+    display: flex;
+    justify-content: center;
+}
+
+.dash-guardar-btn {
+    background: #299fd7;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.dash-guardar-btn:hover {
+    background: #007bb8;
+}
+
+/* ===== CONTENEDORES PRINCIPALES ===== */
+
+.dash-finanzas-container,
+.dash-bienestar-container {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* ===== TARJETAS DE RESUMEN ===== */
+
+.resumen-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    gap: 12px;
+}
+
+.resumen-card {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f4f8fc;
+}
+
+.resumen-card h3 {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.resumen-card .monto {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #299fd7;
+}
+
+/* ===== GRAFICO ===== */
+
+.finanzas-dashboard-box {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 5px;
+}
+
+/* ===== BIENESTAR ===== */
+
+.dash-emociones-box {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 10px 0 15px;
+}
+
+.dash-emocion-btn {
+    background: white;
+    border: none;
+    font-size: 2.2rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.dash-emocion-btn.selected {
+    transform: scale(1.2);
+    color: #299fd7;
+}
+
+.dash-comentario {
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 1rem;
+    resize: none;
+    margin-bottom: 15px;
+}
+
+.dash-guardar-box {
+    display: flex;
+    justify-content: center;
+}
+
+.dash-guardar-btn {
+    background: #299fd7;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.dash-guardar-btn:hover {
+    background: #007bb8;
+}
+
