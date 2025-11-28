@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 
-import Header from "./components/FooterNav";  // lo que tú renombraste
-import Footer from "./components/Navbar";
+import FooterNav from "./components/FooterNav";  // lo que tú renombraste
+import Navbar from "./components/Navbar";
 
 // IMPORTA TODAS LAS PÁGINAS
 import Landing from "./pages/Landing";
