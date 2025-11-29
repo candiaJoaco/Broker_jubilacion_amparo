@@ -27,7 +27,7 @@ function App() {
         <Route path="/ajustes" element={<Ajustes />} />
       </Routes>
 
-      {!hideLayout && <Footer />}
+      {!hideLayout && <FooterNav />}
     </>
   );
 }
