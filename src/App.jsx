@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      {!hideLayout && <Header />}
+      {!hideLayout && <Navbar />}
 
       <Routes>
         <Route path="/" element={<Landing />} />
